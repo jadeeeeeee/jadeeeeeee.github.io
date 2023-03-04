@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+		<meta name="viewport" content="width-device.width, initial-scale = 1.0">
+		<link rel="stylesheet" href="style.css">
+		 <link rel="icon" type="image/x-icon" href="wave.ico">
+		<title>Personal portfolio site</title>
+		<script>
+			var tabLinks = document.getElementsByClassName("tab-links");
+			var tabContents = document.getElementsByClassName("tab-contents");
+			function openTab(tabName)
+			{
+				for(tabLink of tabLinks) {
+					tabLink.classList.remove("active-link");
+				}
+				for(tabContent of tabContents) {
+					tabContent.classList.remove("active-tab");
+				}
+				<!-- Move the active link to show which tab is highlighted -->
+				event.currentTarget.classList.add("active-link");
+				<!-- Change the tab content -->
+				var newTab = document.getElementById(tabName)
+				newTab.classList.add("active-tab");
+				
+				if(tabName != "skills")
+				{
+					document.getElementById('skills').style.display = "none";
+				}
+				else
+				{
+					document.getElementById('skills').style.display = "grid";
+				}
+
+			}
+			<!-- Careful side-menu not loading. Document.getElementById in function -->
+			function openMenu() {
+				document.getElementById('side-menu').style.right = "0";
+			}
+			function closeMenu() {
+				document.getElementById('side-menu').style.right = "-200px";
+			} 
+		</script>
+		<script src="https://kit.fontawesome.com/bcd8f03ea4.js" crossorigin="anonymous"></script>
+		<!-- Import the Poppins font -->
+		<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+	</head>
+	<body>
+		<div id="header">
+			<div class="container">
+				<!-- List of navigation links -->
+					<nav>
+						<!-- <img src="images/logo.png" class="logo"/> -->
+						<ul id="side-menu">
+							<li><a href="#header">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#portfolio">Projects</a></li>
+							<li><a href="#contact">Contact</a></li>
+							<i class="fa-solid fa-times" onClick="closeMenu()"></i>
+						</ul>
+						<i class="fa-solid fa-bars" onClick="openMenu()"></i>
+					</nav>
+				<div class="header-text">
+					<img src="images/wave.png" id="wave" />
+					<h1>Welcome to my<span>  portfolio</span> </h1><br />
+					<p>Hi, I'm Jade Harris.</p>
+				</div>
+			</div>
+		</div>
+		<!-- About me section -->
+		<div id="about">
+			<div class="container">
+				<div class="row">
+					<div class="about-col-2">
+						<h1 class="sub-title">About Me</h1>
+						<p><br /><b>Hi, I'm Jade. Nice to meet you.</b></p>
+						<p class="description"><br />I'm an aspiring software engineer currently studying a Bachelor of Computer Science at university
+						and eager to learn about designing and developing innovative applications. I am driven by the impact of software and technology to improve
+						the quality of lives for individuals and communities, and passionate about building skills and experience in this field.
+						<br /><br />
+						I'm an extremely hardworking, inquisitive and ambitious developer who is eager to explore emerging technologies. 
+						I thoroughly enjoy the fun and rewarding nature of working in a team, and the constantly changing landscape of of the software industry.
+						<br /><br />
+						In my free time, I thoroughly enjoy coding personal projects, spending time with family and friends, digital artwork and exploring the local bush with my dog.
+						<br /><br /></p>
+						
+						<div class="tab-titles">
+							<p class="tab-links active-link" onClick="openTab('skills')">Skills</p>
+							<p class="tab-links" onClick="openTab('experience')">Experience</p>
+							<p class="tab-links" onClick="openTab('education')">Education</p>
+						</div>
+						
+						<div class="tab-contents active-tab" id="skills">
+								<div>
+									<i class="fa-solid fa-code"></i>
+									<h2>Languages/Skills</h2>
+									<ul>
+										<li>Java, Swing and AWT</li>
+										<li>C# (Winforms)</li>
+										<li>HTML, CSS, Javascript (XSLT, JSON, AJAX)</li>
+										<li>Sql (MySQL Workbench, SQLiteStudio)</li>
+										<li>AWS (EC2, PuTTy)</li>
+									</ul>
+									<!-- <a href="#">Learn more</a> -->
+								</div>
+								<div>
+									<i class="fa-solid fa-fill-drip"></i>
+									<h2>Design (UI/UX)</h2>
+									<ul>
+										<li>Figma</li>
+										<li>Adobe Photoshop and Premiere Pro</li>
+										<li>User Requirements and Experience Modeling (Persona/Archetype, Scenario/Storyboard, Low-Fidelity Prototype, High-Fidelity Prototype)</li>
+										
+									</ul>
+									<!-- <a href="#">Learn more</a> -->
+								</div>
+								<div>
+									<i class="fa-regular fa-file"></i>
+									<h2>Documentation</h2>
+									<ul>
+										<li>Psuedocode</li>
+										<li>Gantt Chart</li>
+										<li>System Modeling, UMLet (Domain Class Diagram, Activity Diagram, System Flowchart, Use Case Description)</li>
+										<li>Microsoft 365</li>
+										
+									</ul>
+									<!-- <a href="#">Learn more</a> -->
+								</div>	
+						</div>
+						<div class="tab-contents" id="experience">
+									<div>
+									<i class="fa-solid fa-gamepad"></i>
+									<h2>Minecraft Server</h2>
+									<ul>
+										<li>(2014 - 2017)</li>
+										<li>Catalysed my interest in software.</li>
+										<li>Spigot server. Experience with Java to alter and configure plugins.</li>
+										<li>Enjin CMS and HTML for website and webstore.</li>
+									</ul>
+									<!-- <a href="#">Learn more</a> -->
+								</div>
+								<div>
+									<i class="fa-solid fa-coins"></i>
+									<h2>Suncorp Intern</h2>
+									<ul>
+										<li>(2019)</li>
+										<li>One-week long training program.</li>
+										<li>Prototyping an InVision interface that engaged a teenage demographic in banking. Project accessible in portfolio.</li>
+										<li>Adobe Photoshop and InVision</li>
+										
+									</ul>
+									<!-- <a href="#">Learn more</a> -->
+								</div>
+								<div>
+									<i class="fa-solid fa-chalkboard-user"></i>
+									<h2>Online Tutoring</h2>
+									<ul>
+										<li>(2022 - present)</li>
+										<li>Use of Zoom and Google Jamboard to assist students in HSC English, Mathematics and Software Design and Development.</li>
+										<li>Developed interpersonal, preparation and collaboration skills.</li>
+									</ul>
+									<!-- <a href="#">Learn more</a> -->
+								</div>	
+						</div>
+						<div class="tab-contents" id="education" >
+								<div>
+									<i class="fa-solid fa-chalkboard-user"></i>
+									<h2>Engadine High School</h2>
+									<ul>
+										<li>(2016 - 2021)</li>
+										<li>98.35 ATAR</li>
+										<li>Software Design and Development, Engineering, English Extension 2, English Extension 1, English Advanced, Mathematics Extension 1 and Mathematics Advanced</li>
+										<li>C# (Winforms), SQLiteStudio, Adobe Photoshop and Premiere Pro </li>
+									</ul>
+									<!-- <a href="#">Learn more</a> -->
+								</div>
+								<div>
+									<i class="fa-solid fa-school-flag"></i>
+									<h2>University of Wollongong</h2>
+									<ul>
+										<li>(2022 - 2024)</li>
+										<li>Bachelor of Computer Science (Dean's Scholar) majoring in Software Engineering</li>
+										<li>Westpac 100 Young Technologist, The William Dor Transofmring Futures Scholarship in Engineering and Information Sciences</li>
+										<li>Java, CSS, HTML, Javascript, Sql</li>
+									</ul>
+									<!-- <a href="#">Learn more</a> -->
+								</div>
+	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	
+		<!-- Portfolio section -->
+		<div id="portfolio">
+			<div class="container">
+				<h1 class="sub-title">My Projects</h1>
+				<br />
+				<h3 class="project-subtitle">Software Projects</h3>
+				<div class="work-list">
+					<div class="work">
+						<img src="images/java1.png" />
+						<div class="layer">
+							<h3>Java Grocery Order System (2022)</h3>
+							<p>University Year 1 Java final assessment from Object Oriented Design and Programming course. GitHub repository includes
+							a created UML class diagram that also guides implementation. Use of Java Swing and AWT components and text file I/O.</p>
+							<a href="https://github.com/jadeharris737/groceryOrder" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+					<div class="work">
+						<img src="images/connect.png" />
+						<div class="layer">
+							<h3>CONNECT (2021)</h3>
+							<p>Software Design and Development Year 12 major work, utilising C# Winforms and connecting with an Amazon Web Server (EC2).
+							Full-stack project with most significant scope. This allows users to connect together and organise events.</p>
+							<a href="https://github.com/jadeharris737/connect" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+					<div class="work">
+						<img src="images/tasFaculty.png" />
+						<div class="layer">
+							<h3>TAS Faculty Budget Application (2021)</h3>
+							<p>Individual software project completed duirng Year 12 of the Software Design and Development course. Aims to allow head teachers to organise the budget
+							for the subjects effectively. Completed in C# Winforms with SQLiteStudio.</p>
+							<a href="https://github.com/jadeharris737/tasFacultyBudget" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+						<div class="work">
+						<img src="images/hangman.png" />
+						<div class="layer">
+							<h3>Hangman (2020)</h3>
+							<p>Individual software project completed duirng Year 11 of the Software Design and Development course. Completed in C# Winforms
+							with use of Photoshop framing to create engaging hangman animations.</p>
+							<a href="https://github.com/jadeharris737/hangman" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+						<div class="work">
+						<img src="images/battleship.png" />
+							<div class="layer">
+							<h3>Battleship (2020)</h3>
+							<p>Individual software project completed duirng Year 11 of the Software Design and Development course. Focus on aesthetic interface and incorporation of an 'AI' generator to select the computer player spot. Completed in C# Console App (.NET CORE).</p>
+							<a href="https://github.com/jadeharris737/battleship" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+					<div class="work">
+						<img src="images/html1.png" />
+						<div class="layer">
+							<h3>HTML, CSS, Javascript Assessments (2022)</h3>
+							<p>University HTML, CSS amd Javascript assessments from Introduction to Web Technology course. More simple interfaces but web technology themes delving
+							into XML, DTD, XSLT, JSON and AJAX.</p>
+							<a href="https://github.com/jadeharris737/htmlCssJavascript"  target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+					<div class="work">
+						<img src="images/sql.png" />
+						<div class="layer">
+							<h3>MySQL Workbench Assessments (2022)</h3>
+							<p>A sample of some University MySQL Workbench assessments from Database Management and Security course. Explores concepts of logical design (PK, FK, relational schema), query language (aggregate, join, nesting, views).</p>
+							<a href="https://github.com/jadeharris737/mySQLWorkbench" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>					
+				</div>
+				
+				<br />
+				<br />
+				<h3 class="project-subtitle">Documentation Projects</h3>
+				<div class="work-list">
+					<div class="work">
+						<img src="images/connectDoc.png" />
+						<div class="layer">
+							<h3>CONNECT Project Development Report (2021)</h3>
+							<p>Includes Requirements Report and Project Plan and Project Development Report
+							for the CONNECT major work. Documentation such as data flow diagrams, structure charts, and psuedocode.</p>
+							<a href="images/connectPdf.pdf" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+					<div class="work">
+						<img src="images/tasFacultyDocumentation.png" />
+						<div class="layer">
+							<h3>TAS Faculty User Documentation (2021)</h3>
+							<p>User documentation for the TAS Faculty program. Demonstrates thorough understanding of the user and documents that support the system. Showcases
+							the systems functions.</p>
+							<a href="images/tasFacultyPdf.pdf" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+					<div class="work">
+						<img src="images/hangmanDoc.png"/>
+						<div class="layer">
+							<h3>Hangman Project Development Report (2020)</h3>
+							<p>Created in Year 11, documents the structured approach of the Software Development Life Cycle used to develop the Hangman application.
+							Includes ideas generation and networkability considerations.</p>
+							<a href="images/hangmanPdf.pdf" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+						<div class="work">
+						<img src="images/upshiftDoc.png" />
+						<div class="layer">
+							<h3>Project UPSHIFT (2022)</h3>
+							<p>IT System Proposal report created in University Systems Analysis. Collaborated in a group of 4 members. Utilised UMLet for system modeling
+							and Project Libre for the Gantt chart. Documentation such as stakeholder analysis, use cases, activity diagrams, and class diagrams.</p>
+							<a href="images/upshift.pdf" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+					<div class="work">
+						<img src="images/cultivateDoc.png" />
+						<div class="layer">
+							<h3>Cultivate Documentation (2022)</h3>
+							<p>Front-End solution report created in University course Human Computer Interaciton. Collaborated in a group of 2 members. Utilised Adobe Photoshop, Microsoft 365 and Figma.
+							Includes discussion on key design patterns.</p>
+							<a href="images/cultivatePdf.pdf" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+					<div class="work">
+						<img src="images/ascension.png" />
+						<div class="layer">
+							<h3>Project Ascension ICT Network Proposal (2022)</h3>
+							<p>ICT System Proposal report created in University course Networks and Communication course. Collaborated in a group of 4 members. Utilised Microsoft 365.</p>
+							<a href="images/ascensionDoc.pdf" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<br />
+				<br />
+				<h3 class="project-subtitle">Design Projects</h3>
+				<div class="work-list project">
+					<div class="work">
+						<img src="images/orbis.PNG" />
+						<div class="layer">
+							<h3>ORBIS Interface (2019)</h3>
+							<p>Created collaborating in a group of 4 members, this design prototype was created using
+							InVision and Adobe Photoshop.</p>
+							<a href="https://projects.invisionapp.com/share/ENTKJ5P2S3K#/screens" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+						<div class="work">
+						<img src="images/cultivate.png" />
+						<div class="layer">
+							<h3>Cultivate Interface (2022)</h3>
+							<p>Created collaborating in a group of 2 members in University course Human-Computer Interaction to create
+							an application that contributed to the solution of a SDG. Created with Figma and Photoshop.</p>
+							<a href="https://www.youtube.com/watch?v=bCw9p5baj7Y&ab_channel=JadeHarris" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+						<div class="work">
+						<img src="images/gameOver.png" />
+							<div class="layer">
+							<h3>Gameover Choose-your-own-path Multimedia Site (2019)</h3>
+							<p>Creating individually during Information Software and Technology assignment in Year 11. Utilised HTML, CSS and Adobe Photoshop and Premiere Pro.</p>
+							<a href="https://github.com/jadeharris737/gameOver" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+						<div class="work">
+
+						</div>
+					</div>
+						<div class="work">
+
+						</div>
+					</div>
+				</div>
+				<!-- <a href="#" class="btn">See more</a> -->
+			</div>
+		</div>
+		<!-- Contact form section -->
+		<div id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="contact-left">
+					<h1 class="sub-title">Contact Me</h1>
+						<div class="information">
+							<div class="social-icons">
+								<a href="mailto:jadeharris737@gmail.com"><i class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;&nbsp;jadeharris737@gmail.com</a><br /><br />
+								<a href="https://www.linkedin.com/in/jade-harris-59a71723b/" target="_blank"><i class="fa-brands fa-linkedin"></i>&nbsp;&nbsp;&nbsp;Jade Harris</a>
+							</div>
+						</div>
+						<div class="cv">
+							<a href="images/resume.pdf" target="_blank" class="btn btn2">View Resume</a>
+						</div>
+					</div>
+					<div class="contact-right">
+						<form name="submit-to-google-sheet">
+							<input type="text" name="Name" placeholder="Enter your name" required />
+							<input type="email" name="Email" placeholder="Enter your email" required />
+							<textarea name="Message" rows="6" placeholder="Enter your message" required></textarea>
+							<button type="submit" class="btn btn2">Submit</button>
+						</form>
+						<span id="msg"></span>
+						<br />
+						<p><i>Note: There is a delay while the message is processing submission.</i></p>
+					</div>
+				</div> 
+			</div>
+			<div class="footer">
+				<p>Thank you for visiting my portfolio. <br /> <br /><i><a href="http://fontawesome.io" target="_blank">Font Awesome by Dave Gandy</a></i></p>
+			</div>
+		</div>
+		<script>
+		  const scriptURL = 'https://script.google.com/macros/s/AKfycbxs756_sbsSFFv-adDtsIB1TAFWJmS3LSMx6ncuvQT2Cu-f0lWUzxQiCWRiyXdHpLKx/exec'
+		  const form = document.forms['submit-to-google-sheet']
+		  const msg = document.getElementById('msg')
+
+		  form.addEventListener('submit', e => {
+			e.preventDefault()
+			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			  .then(response => {
+				msg.innerHTML = "Message successfully sent."
+				setTimeout(function(){
+					msg.innerHTML = ""
+					}, 5000)
+					form.reset()
+			  })
+			  .catch(error => msg.innerHTML = "Error: " + error.message)
+		  })
+		</script>
+	</body>
+</html>
